@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class Result extends StatefulWidget {
@@ -15,12 +14,16 @@ class _ResultState extends State<Result> {
 
   void _flip() {
     Random random = new Random();
-    int randomNumber = random.nextInt(1);
+    int randomNumber = random.nextInt(2);
 
     if (randomNumber == 0) {
-      _resultado = const AssetImage("images/moeda_cara.png");
-    } else {
-      _resultado = const AssetImage("images/moeda_coroa.png");
+      setState(() {
+        _resultado = AssetImage("images/moeda_cara.png");
+      });
+    } else if (randomNumber == 1) {
+      setState(() {
+        _resultado = AssetImage("images/moeda_coroa.png");
+      });
     }
   }
 
