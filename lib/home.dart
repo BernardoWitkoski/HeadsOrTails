@@ -9,6 +9,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  void _jogar() {
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
