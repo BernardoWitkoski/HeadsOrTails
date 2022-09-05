@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heads_tails/result.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   void _jogar() {
-    
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Result()));
   }
 
   @override
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: null,
+                    onTap: _jogar,
                     child: Image.asset("images/botao_jogar.png"),
                   ),
                 ],
