@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:heads_tails/home.dart';
 
 class Result extends StatefulWidget {
   const Result({Key? key}) : super(key: key);
@@ -9,6 +10,10 @@ class Result extends StatefulWidget {
 }
 
 class _ResultState extends State<Result> {
+
+  void _voltar() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+  }
   
   var _resultado;
 
@@ -36,6 +41,18 @@ class _ResultState extends State<Result> {
           children: [
             Image(
               image: _resultado,
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 32),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: _voltar,
+                    child: Image.asset("images/botao_jogar.png"),
+                  ),
+                ],
+              ),
             ),
           ],
         ));
