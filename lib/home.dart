@@ -12,31 +12,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  //void _jogar() {
-  //  Navigator.push(context, MaterialPageRoute(builder: (context) => Result()));
-  //}
-
-  var _imageApp;
-
-  void _flip() {
-    var coin = ["moeda_cara.png", "moeda_coroa.png"];
-    int randomNumber = Random().nextInt(coin.length);
-    var result = coin[randomNumber];
-
-    // switch (result) {
-    //   case "cara":
-    //     setState(() {
-    //       _imageApp = AssetImage("images/moeda_cara.png");
-    //     });
-    //     break;
-    //   case "coroa":
-    //     setState(() {
-    //       _imageApp = AssetImage("images/moeda_coroa.png");
-    //     });
-    //     break;
-    // }
-}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,3 +41,22 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+  // void _flip() {
+  //   var coin = ["moeda_cara.png", "moeda_coroa.png"];
+  //   int randomNumber = Random().nextInt(coin.length);
+  //   var result = coin[randomNumber];
+
+    // switch (result) {
+    //   case "cara":
+    //     setState(() {
+    //       _imageApp = AssetImage("images/moeda_cara.png");
+    //     });
+    //     break;
+    //   case "coroa":
+    //     setState(() {
+    //       _imageApp = AssetImage("images/moeda_coroa.png");
+    //     });
+    //     break;
+    // }
+//}

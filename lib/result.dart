@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:heads_tails/home.dart';
 
 class Result extends StatefulWidget {
-  const Result({Key? key}) : super(key: key);
+  const Result(String Function() coinSide, {Key? key}) : super(key: key);
 
   @override
   State<Result> createState() => _ResultState();
@@ -11,11 +11,15 @@ class Result extends StatefulWidget {
 
 class _ResultState extends State<Result> {
 
-  void _voltar() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-  }
-  
   var _imageApp;
+
+  var options = ["moeda_cara.png", "moeda_coroa.png"];
+  late String coinResult;
+
+  String coinSide() {
+    int randomNumber = Random().nextInt(options.length);
+    return coinResult = options[randomNumber];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,7 @@ class _ResultState extends State<Result> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: _voltar,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Home())),
                     child: Image.asset("images/botao_voltar.png"),
                   ),
                 ],
