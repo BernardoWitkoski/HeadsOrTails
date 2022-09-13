@@ -19,7 +19,7 @@ class _ResultState extends State<Result> {
 
   void _flip() {
     var coin = ["cara", "coroa"];
-    int randomNumber = Random().nextInt(2);
+    int randomNumber = Random().nextInt(coin.length);
     var result = coin[randomNumber];
 
     switch (result) {
@@ -53,7 +53,7 @@ class _ResultState extends State<Result> {
                 children: [
                   GestureDetector(
                     onTap: _voltar,
-                    child: Image.asset("images/botao_jogar.png"),
+                    child: Image.asset("images/botao_voltar.png"),
                   ),
                 ],
               ),
