@@ -15,22 +15,26 @@ class _ResultState extends State<Result> {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
   }
   
-  var _resultado;
+  var _imageApp;
 
   void _flip() {
-    Random random = new Random();
-    int randomNumber = random.nextInt(2);
+    var coin = ["cara", "coroa"];
+    int randomNumber = Random().nextInt(2);
+    var result = coin[randomNumber];
 
-    if (randomNumber == 0) {
-      setState(() {
-        _resultado = AssetImage("images/moeda_cara.png");
-      });
-    } else if (randomNumber == 1) {
-      setState(() {
-        _resultado = AssetImage("images/moeda_coroa.png");
-      });
+    switch (result) {
+      case "cara":
+        setState(() {
+          _imageApp = AssetImage("images/moeda_cara.png");
+        });
+        break;
+      case "coroa":
+        setState(() {
+          _imageApp = AssetImage("images/moeda_coroa.png");
+        });
+        break;
     }
-  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,7 @@ class _ResultState extends State<Result> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image(
-              image: _resultado,
+              image: _imageApp,
             ),
             Padding(
               padding: EdgeInsets.only(top: 32),
