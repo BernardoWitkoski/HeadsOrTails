@@ -17,25 +17,6 @@ class _ResultState extends State<Result> {
   
   var _imageApp;
 
-  void _flip() {
-    var coin = ["cara", "coroa"];
-    int randomNumber = Random().nextInt(coin.length);
-    var result = coin[randomNumber];
-
-    switch (result) {
-      case "cara":
-        setState(() {
-          _imageApp = AssetImage("images/moeda_cara.png");
-        });
-        break;
-      case "coroa":
-        setState(() {
-          _imageApp = AssetImage("images/moeda_coroa.png");
-        });
-        break;
-    }
-}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
