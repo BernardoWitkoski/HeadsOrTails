@@ -19,13 +19,15 @@ class _ResultState extends State<Result> {
       backgroundColor: Color.fromRGBO(97, 189, 140, 1),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset("images/" + widget.coinResult),
             Padding(
               padding: EdgeInsets.only(top: 32),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Image.asset("images/" + widget.coinResult),
+                  //Image.asset("images/" + widget.coinResult),
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Image.asset("images/botao_voltar.png"),
