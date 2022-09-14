@@ -12,6 +12,16 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  var options = ["moeda_cara.png", "moeda_coroa.png"];
+  late String coinResult;
+
+  void coinSide() {
+    int randomNumber = Random().nextInt(options.length);
+    coinResult = options[randomNumber];
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Result(coinResult)));
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +39,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Result())),
+                    onTap: coinSide,
                     child: Image.asset("images/botao_jogar.png"),
                   ),
                 ],
