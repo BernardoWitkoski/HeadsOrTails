@@ -27,7 +27,6 @@ class _ResultState extends State<Result> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  //Image.asset("images/" + widget.coinResult),
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Image.asset("images/botao_voltar.png"),
