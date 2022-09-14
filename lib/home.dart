@@ -12,10 +12,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  var options = ["moeda_cara.png", "moeda_coroa.png"];
+  List<String> options = ["moeda_cara.png", "moeda_coroa.png"];
   late String coinResult;
 
-  void coinSide() {
+  void _coinSide() {
     int randomNumber = Random().nextInt(options.length);
     coinResult = options[randomNumber];
     Navigator.push(context, MaterialPageRoute(builder: (context) => Result(coinResult)));
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: coinSide,
+                    onTap: _coinSide,
                     child: Image.asset("images/botao_jogar.png"),
                   ),
                 ],
@@ -52,6 +52,8 @@ class _HomeState extends State<Home> {
   }
 }
 
+
+//-----------------------------------------------------------------
   // void _flip() {
   //   var coin = ["moeda_cara.png", "moeda_coroa.png"];
   //   int randomNumber = Random().nextInt(coin.length);

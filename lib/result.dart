@@ -4,7 +4,7 @@ import 'package:heads_tails/home.dart';
 
 class Result extends StatefulWidget {
 
- late String coinResult;
+ String coinResult;
  Result(this.coinResult);
 
   @override
@@ -13,8 +13,6 @@ class Result extends StatefulWidget {
 
 class _ResultState extends State<Result> {
 
-  var coinResult;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,14 +20,12 @@ class _ResultState extends State<Result> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(
-              image: coinResult,
-            ),
             Padding(
               padding: EdgeInsets.only(top: 32),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+                children: <Widget>[
+                  Image.asset("images/" + widget.coinResult),
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Image.asset("images/botao_voltar.png"),
